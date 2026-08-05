@@ -1,0 +1,126 @@
+Build a modern full-stack web application called "Student Lost & Found Portal".
+
+Tech Stack:
+- Frontend: React + Vite
+- Backend: Node.js + Express
+- Database: SQLite
+- Styling: Tailwind CSS
+- Icons: Lucide React
+- Use REST APIs.
+- Keep the project beginner-friendly with clean folder structure and comments.
+
+The application should have the following features:
+
+Authentication
+- Student Sign Up
+- Student Login
+- Logout
+- Passwords should be securely hashed using bcrypt.
+- Use JWT authentication.
+
+Home Page
+- Attractive landing page.
+- Navbar with Home, Lost Items, Found Items, Login/Profile.
+- Hero section with a search bar.
+- Display recent lost and found items.
+
+Lost Item Module
+- Post a lost item.
+- Fields:
+  - Item Name
+  - Category
+  - Description
+  - Location Lost
+  - Date Lost
+  - Contact Number
+  - Upload Image
+- Edit and delete only by the owner.
+
+Found Item Module
+- Post a found item.
+- Fields:
+  - Item Name
+  - Category
+  - Description
+  - Location Found
+  - Date Found
+  - Contact Number
+  - Upload Image
+- Edit and delete only by the owner.
+
+Browse Page
+- Show all lost and found items.
+- Search by item name.
+- Filter by category.
+- Filter by Lost or Found.
+- Responsive card layout.
+
+Item Details Page
+- Show large image.
+- Complete description.
+- Posted by.
+- Date.
+- Location.
+- Contact button.
+
+Dashboard
+- View all posts created by the logged-in user.
+- Edit posts.
+- Delete posts.
+- Display statistics:
+  - Total Lost Posts
+  - Total Found Posts
+
+Admin Panel
+- Simple admin login.
+- View all users.
+- View all posts.
+- Delete inappropriate posts.
+
+Database Tables
+
+Users
+- id
+- name
+- email
+- password
+- createdAt
+
+Items
+- id
+- title
+- description
+- category
+- type (Lost/Found)
+- location
+- date
+- image
+- contact
+- userId
+- createdAt
+
+Backend APIs
+
+POST /api/auth/register
+POST /api/auth/login
+
+GET /api/items
+GET /api/items/:id
+POST /api/items
+PUT /api/items/:id
+DELETE /api/items/:id
+
+GET /api/dashboard
+
+Additional Requirements
+- Validate all forms.
+- Display success/error notifications.
+- Responsive design for mobile and desktop.
+- Clean UI with blue and white theme.
+- Use loading spinners while fetching data.
+- Show "No Items Found" when appropriate.
+- Store uploaded images locally in an uploads folder.
+- Organize backend using routes, controllers, middleware, and models.
+- Organize frontend into reusable React components.
+- Include a README.md with setup instructions.
+- Make the application production-ready and easy to understand for first-year students.

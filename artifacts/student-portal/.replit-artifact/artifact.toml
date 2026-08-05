@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Student Lost & Found Portal"
+description = "A full-stack web app for university students to post and browse lost and found items. Students can register/login with JWT auth, post lost or found items with images, browse/search/filter items, manage their own posts, and admins can moderate all content."
+version = "1.0.0"
+id = "artifacts/student-portal"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 21993
+
+[services.development]
+run = "pnpm --filter @workspace/student-portal run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/student-portal", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/student-portal/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "21993"
+BASE_PATH = "/"
